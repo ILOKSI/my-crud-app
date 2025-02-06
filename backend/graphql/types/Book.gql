@@ -1,11 +1,24 @@
 type Book {
-    title: String
-    author: String
+  id: ID,
+  title: String
+  author: String
   }
+
+input BookContent {
+  id: ID,
+  title: String
+  author: String
+}
 
   # The "Query" type is special: it lists all of the available queries that
   # clients can execute, along with the return type for each. In this
   # case, the "books" query returns an array of zero or more Books (defined above).
-  type Query {
-    getBooks: [Book]
+type Query {
+  getBooks: [Book]
+}
+
+type Mutation {
+  addBook(content: BookContent!): Book,
+  updateBook(content: BookContent!): Book,
+  deleteBook(id: ID!): Book
 }

@@ -17,7 +17,7 @@ const books = [
 ];
 
 
-const MONGO_URI = 'mongodb://localhost:27017/mu-crrud-app'
+const MONGO_URI = 'mongodb://localhost:27017/mu-crud-app'
 mongoose
   .connect(MONGO_URI, {})
   .then(() => console.log(`🚀  Database started ${MONGO_URI}`))
