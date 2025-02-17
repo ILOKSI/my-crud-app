@@ -1,0 +1,33 @@
+type User {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+  role: Role!
+}
+
+input UserContent {
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+  role: Role!
+}
+
+enum Role {
+  ADMIN
+  MANAGER
+  SALES
+  SUPPORT
+}
+
+type Query {
+  getUsers: [User]
+}
+
+type Mutation {
+  addUser(content: UserContent!): User,
+  updateUser(content: UserContent!): User,
+  deleteUser(id: ID!): User
+}
