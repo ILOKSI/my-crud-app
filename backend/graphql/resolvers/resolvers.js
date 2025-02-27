@@ -22,13 +22,12 @@ const resolvers = {
         }).save()
       return res
     },
-    addUser: async (_, { content }) => {
+    addUser: async (_, { input }) => {
       const res = await new User( {
-        firstName: content.firstName,
-        lastName: content.lastName,
-        email: content.email,
-        password: content.password,
-        role: content.role
+        firstName: input.firstName,
+        lastName: input.lastName,
+        email: input.email,
+        role: input.role
        }).save()
      return res
    },
@@ -60,16 +59,15 @@ const resolvers = {
     )
     return res
   },
-  updateUser: async (_, { content }) => {
+  updateUser: async (_, { input }) => {
     const res = await User.findOneAndUpdate({
-      _id: content.id
+      _id: input.id
       }, {
         $set: {
-          firstName: content.firstName,
-          lastName: content.lastName,
-          email: content.email,
-          password: content.password,
-          role: content.role
+          firstName: input.firstName,
+          lastName: input.lastName,
+          email: input.email,
+          role: input.role
         }
       }, {
         new: true

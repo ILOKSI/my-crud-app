@@ -3,5 +3,6 @@ import TableComponent from './components/TableComponent.vue'
 </script>
 
 <template>
-  <TableComponent/>
+  <div><h3>Одностраничное fullstack приложение</h3></div>
+  <TableComponent></TableComponent>
 </template>
