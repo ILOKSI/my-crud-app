@@ -1,0 +1,32 @@
+type User {
+  id: ID
+  firstName: String!
+  lastName: String!
+  email: String!
+  role: Role!
+}
+
+input userInput {
+  id: ID
+  firstName: String!
+  lastName: String!
+  email: String!
+  role: Role!
+}
+
+enum Role {
+  ADMIN
+  MANAGER
+  SALES
+  SUPPORT
+}
+
+type Query {
+  getUsers: [User]
+}
+
+type Mutation {
+  addUser(input: userInput): User,
+  updateUser(input: userInput): User,
+  deleteUser(id: ID!): User
+}
